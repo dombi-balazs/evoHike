@@ -1,8 +1,10 @@
 # A Projekt Indítása
 
-*Navigálj a frontend könyvtárba:*
+NodeJS szükséges a projekt futtatásához: [NodeJS](https://nodejs.org/)
 
-1. ```bash
+1. **Navigálj a frontend könyvtárba:**
+
+   ```bash
    cd evoHike.Frontend
    ```
 2. **Telepítsd a szükséges csomagokat** (ezt csak az első alkalommal kell futtatni):
