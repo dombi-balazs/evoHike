@@ -16,7 +16,8 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5204/weatherforecast');
+                const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/weatherforecast`;
+                const response = await fetch(apiUrl);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
