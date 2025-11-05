@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev:backend": "dotnet run --launch-profile http --project ../evoHike.Backend/evoHike.Backend.csproj",
+    "dev:backend": "dotnet run --launch-profile https --project ../evoHike.Backend/evoHike.Backend.csproj",
     "start:dev": "concurrently -n \"FRONTEND,BACKEND\" \"npm run dev\" \"npm run dev:backend\""
   },
   "dependencies": {
