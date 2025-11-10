@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,json}\" --log-level warn",
     "preview": "vite preview",
     "lint-format": "npm run lint && npm run format",
-    "dev:backend": "dotnet run --launch-profile http --project ../evoHike.Backend/evoHike.Backend.csproj",
+    "dev:backend": "dotnet run --launch-profile https --project ../evoHike.Backend/evoHike.Backend.csproj",
     "start:dev": "npm run check-deps && npm run lint-format && concurrently -n \"FRONTEND,BACKEND\" \"npm run dev\" \"npm run dev:backend\""
   },
   "dependencies": {
