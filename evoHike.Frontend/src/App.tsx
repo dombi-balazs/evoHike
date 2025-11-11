@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import type { WeatherForecast } from './types/api';
 import Button from './components/Button'
