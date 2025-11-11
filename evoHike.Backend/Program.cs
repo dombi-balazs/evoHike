@@ -26,7 +26,11 @@ builder.Services.AddCors(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
 
 var app = builder.Build();
 
@@ -46,6 +50,13 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
+/// <summary>
+/// Visszaad egy 5 napos időjárás-előrejelzést.
+/// </summary>
+/// <remarks>
+/// Ez csak egy példa végpont, a jövőben valós adatokkal fog visszatérni.
+/// </remarks>
+/// <returns>Egy lista az előrejelzésekkel.</returns>
 app.MapGet("/weatherforecast", () =>
     {
         var forecast =  Enumerable.Range(1, 5).Select(index =>
